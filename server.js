@@ -25,3 +25,12 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+// To Call Self API 
+
+const callingSelfAPI = async () => {
+	await fetch("https://nerds-together.glitch.me");
+	console.log("API Called");
+}
+
+setInterval(callingSelfAPI, 240000);
