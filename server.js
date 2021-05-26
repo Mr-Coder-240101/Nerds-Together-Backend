@@ -1,6 +1,7 @@
 // Load Modules
 const express = require("express");
 const connectToDatabase = require("./config/database");
+const request = require("request");
 
 // Create instance of express
 const app = express();
@@ -29,8 +30,9 @@ app.listen(port, () => console.log(`Server is running on port ${port}`));
 // To Call Self API 
 
 const callingSelfAPI = async () => {
-	await fetch("https://nerds-together.glitch.me");
-	console.log("API Called");
+  request('https://nerds-together.glitch.me/', function () {
+    console.log("Called API");
+  });
 }
 
 setInterval(callingSelfAPI, 240000);
