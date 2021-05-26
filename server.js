@@ -21,7 +21,7 @@ app.use("/api/authentication", require("./routes/api/authentication"));
 
 // Add Main Router
 app.get("/", (req, res) => {
-    res.send("Hello World");
+    res.send("Welcome To Official Api Of Nerds Together");
 });
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
