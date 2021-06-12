@@ -157,7 +157,7 @@ router.post("/forgot-password/", validate2, async (req, res) => {
                                 subject: "Link For Resetting The Password.",
                                 html: `<h2>This Link Only Work For 10 Minutes</h2>
                                         <br />
-                                        http://localhost:3000/reset-password/${token}`,
+                                        https://nerds-together.glitch.me/reset-password/${token}`,
                             };
 
                             transporter.sendMail(mailOptions, function (error) {
@@ -227,7 +227,7 @@ router.post("/avatars/", authentication, async (req, res) => {
                         throw error;
                     }
                 });
-                const avatar = `http://localhost:9000/api/authentication/avatar/${req.id}`;
+                const avatar = `https://nerds-together.glitch.me/api/authentication/avatar/${req.id}`;
                 const updatedAvatar = {
                     avatar,
                 };
