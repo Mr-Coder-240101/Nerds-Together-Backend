@@ -220,7 +220,7 @@ router.post("/avatars/", authentication, async (req, res) => {
     if (req.files.file) {
         const file = req.files.file;
         if (file.mimetype === "image/jpeg" || file.mimetype === "image/jpg") {
-            const path = `${__dirname}\\..\\..\\uploads\\${req.id}.jpg`;
+            const path = `${__dirname}/../../uploads/${req.id}.jpg`;
             try {
                 file.mv(path, (error) => {
                     if (error) {
@@ -257,14 +257,14 @@ router.post("/avatars/", authentication, async (req, res) => {
 // Handling Get Request For "api/authentication/avatar/:avatar_id
 router.get("/avatar/:avatar_id", async (req, res) => {
     try {
-        fs.readFile(`${__dirname}\\..\\..\\uploads\\${req.params.avatar_id}.jpg`, (error, data) => {
+        fs.readFile(`${__dirname}/../../uploads/${req.params.avatar_id}.jpg`, (error, data) => {
             if (error) {
                 throw error;
             } else {
                 res.setHeader("Content-Type", "image/jpeg");
                 res.write(data);
                 res.end();
-            }
+            } 
         });
     } catch (error) {
         return res.status(500).json({
