@@ -157,7 +157,7 @@ router.post("/forgot-password/", validate2, async (req, res) => {
                                 subject: "Link For Resetting The Password.",
                                 html: `<h2>This Link Only Work For 10 Minutes</h2>
                                         <br />
-                                        https://nerds-together.glitch.me/reset-password/${token}`,
+                                        https://www.nerds-together.ml/reset-password/${token}`,
                             };
 
                             transporter.sendMail(mailOptions, function (error) {
