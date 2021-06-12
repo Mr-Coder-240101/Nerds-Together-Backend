@@ -3,6 +3,7 @@ const express = require("express");
 const connectToDatabase = require("./config/database");
 const fileupload = require("express-fileupload");
 const got = require("got");
+const cors = require('cors');
 
 // Create instance of express
 const app = express();
@@ -16,6 +17,7 @@ const port = process.env.PORT || 9000;
 // Add Middleware
 app.use(express.json());
 app.use(fileupload());
+app.use(cors());
 
 // Add All Routes
 app.use("/api/users", require("./routes/api/users"));

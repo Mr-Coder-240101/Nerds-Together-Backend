@@ -9,7 +9,7 @@ function check() {
             console.log(err);
         } else {
             files.forEach((file) => {
-                const name = __dirname + "\\" + file;
+                const name = __dirname + "/" + file;
                 const stats = fs.statSync(name);
                 const fileSize = stats.size / 1024.0;
                 if (fileSize > 150) {
@@ -28,7 +28,7 @@ function check() {
 }
 
 function deleteFile(fileName) {
-    const name = __dirname + "\\" + fileName + ".jpg";
+    const name = __dirname + "/" + fileName + ".jpg";
     fs.unlink(name, (error) => {
         if (error) {
             console.log(error);
